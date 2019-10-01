@@ -18,12 +18,12 @@ docker commit initial-install marklogic:8.0-4.2
 
 ## Start the newly created image
 ```sh
-docker run -d --name=marklogic-ing -p 8000-8002:8000-8002 marklogic:8.0-4.2`
+docker run -d --name=marklogic-cust -p 8000-8002:8000-8002 marklogic:8.0-4.2`
 ```
 
 ## Backup the customer's Docker container
 ```sh
-docker commit marklogic-ing marklogic-ing-backup
+docker commit marklogic-cust marklogic-cust-backup
 ```
 
 ## Copy the upgrade files into the container
@@ -31,15 +31,15 @@ Download the upgrade version from https://developer.marklogic.com/products/markl
 Be sure to include the Converters as they are not part of the main download anymore.
 
 ```sh
-docker cp MarkLogic-9.0-10.3.x86_64.rpm marklogic-ing:/tmp
-docker cp MarkLogicConverters-9.0-10.3.x86_64.rpm marklogic-ing:/tmp
+docker cp MarkLogic-9.0-10.3.x86_64.rpm marklogic-cust:/tmp
+docker cp MarkLogicConverters-9.0-10.3.x86_64.rpm marklogic-cust:/tmp
 ```
 
 ## Shell into the docker container and upgrade MarkLogic
 Start the shell:
 
 ```sh
-docker exec -it marklogic-ing sh
+docker exec -it marklogic-cust sh
 ```
 
 Within the shell, run the following commands:
