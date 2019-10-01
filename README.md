@@ -49,4 +49,4 @@ rpm -i /tmp/MarkLogic-9.0-10.3.x86_64.rpm
 rpm -i /tmp/MarkLogicConverters-9.0-10.3.x86_64.rpm
 /sbin/service MarkLogic start
 ```
-Open http://localhost:8001 to ugrade databases
+Open http://localhost:8001 to ugrade databases.
