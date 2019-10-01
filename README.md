@@ -1,7 +1,9 @@
 # Upgrade process "in-situ" for MarkLogic running in Docker container
-This upgrade process was documented and tested for a customer who wanted to upgrade from 8 to 9.
+This upgrade process was documented and tested for a customer who wanted to upgrade from 8 to 9. First of all, make sure to log a ticket with support@marklogic.com to get the latest information on specifics for the versions.
 
-## Create a docker image based on 8.0-4.2
+## Prepare a docker image based on 8.0-4.2
+In this step we build an image that is comparable to the customer's image.
+
 Download the previous version from https://wiki.marklogic.com/display/PS/Previous+MarkLogic+Versions.
 
 ```sh
@@ -18,7 +20,7 @@ docker commit initial-install marklogic:8.0-4.2
 docker run -d --name=marklogic-ing -p 8000-8002:8000-8002 marklogic:8.0-4.2`
 ```
 
-## Backup the docker container
+## Backup the customer's Docker container
 ```sh
 docker commit marklogic-ing marklogic-ing-backup
 ```
