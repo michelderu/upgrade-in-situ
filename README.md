@@ -10,7 +10,8 @@ Download the previous version from https://wiki.marklogic.com/display/PS/Previou
 docker build -t marklogic:8.0-4.2 .
 docker run --name=initial-install -p 8001:8001 marklogic:8.0-4.2
 ```
-Open http://localhost:8001 to self-install database (skip cluster, set-up admin creds)
+Open http://localhost:8001 to self-install database (skip cluster, set-up admin creds). After that, save the installed image.
+
 ```sh
 docker commit initial-install marklogic:8.0-4.2
 ```
